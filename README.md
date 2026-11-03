@@ -26,4 +26,4 @@ These are the main modules required to run the brick breaker game. All of the mo
 | pll_50_to_1.v  | PLL IP core used to generate a 1 MHz clock from the native 50 MHz clock.  |
 | synchronizer.sv  | Synchronizer used for clock domain crossing from the accelerometer interface (1MHz) to the main game logic (50 MHz).  |
 | pong_top_level.sv  | Top-level module used to package everything into an instance of the brick-breaker game |
-| vga_top_wrapper.sv  | Wrapper module used to connect pins to the FPGA. |
+| vga_top_wrapper.sv  | Wrapper module used to connect pins of the FPGA. |
