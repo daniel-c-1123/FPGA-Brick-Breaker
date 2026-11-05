@@ -1,7 +1,7 @@
 # FPGA Brick Breaker
 
 ## Project Overview
-This project recreates brick breaker using an FPGA. The FGPA drives a VGA monitor to display the game and takes inputs from buttons, switches, and an accelerometer chip to control the game. The switch inputs can adjust the puck speed, reset the game, and swap between button and tilt controls. With button controls, the paddle can be moved left and right by pressing two buttons. With tilt controls, the paddle can be moved by tilting the board left and right. To measure tilt, the FPGA communicates with an accelerometer via 3-wire SPI using a controller I wrote myself. I started this project for the purposes of learning digital design, SystemVerilog, and FPGA.
+This project recreates brick breaker using an FPGA. The FGPA drives a VGA monitor to display the game and takes inputs from buttons, switches, and an accelerometer chip to control the game. The switch inputs can adjust the puck speed, reset the game, and swap between button and tilt controls. With button controls, the paddle can be moved left and right by pressing two buttons. With tilt controls, the paddle can be moved by tilting the board left and right. To measure tilt, the FPGA communicates with an accelerometer via 3-wire SPI. I started this project for the purposes of learning digital design, SystemVerilog, and FPGA.
 
 ## Demo Video
 
