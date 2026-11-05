@@ -6,12 +6,12 @@ This project recreates brick breaker using an FPGA. The FGPA drives a VGA monito
 ## Demo Video
 
 ## Parts & Technologies used
-* DE-10- Lite Development Board (MAX-10 FPGA chip)
+* DE10-Lite Development Board (MAX-10 FPGA chip)
 * ADXL345 Accelerometer Chip (G-Sensor)
 * VGA Monitor
   
 * Quartus for synthesizing HDL
-* Questa for testbenching
+* Questa-Altera FPGA edition for testbenching
 
 ## Core File Summary
 These are the main modules required to run the brick breaker game. I wrote all of the modules from scratch, with the exception of one IP Core used to instantiate a PLL (pll_50_to_1.v). 
