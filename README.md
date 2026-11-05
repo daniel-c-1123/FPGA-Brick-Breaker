@@ -4,6 +4,10 @@
 This project recreates brick breaker using an FPGA. The FGPA drives a VGA monitor to display the game and takes inputs from buttons, switches, and an accelerometer chip to control the game. The switch inputs can adjust the puck speed, reset the game, and swap between button and tilt controls. With button controls, the paddle can be moved left and right by pressing two buttons. With tilt controls, the paddle can be moved by tilting the board left and right. To measure tilt, the FPGA communicates with an accelerometer chip via 3-wire SPI. I started this project for the purposes of learning digital design, SystemVerilog, and FPGA.
 
 ## Demo Video
+A short demo video of the game can be viewed [here](https://drive.google.com/file/d/1CqT_u96qDHR4IjhVdggwrSt6mOE15Dk5/view).  
+0:00 : I start the game with button controls with and a slow moving puck.  
+0:16 : I increase the speed of the puck.  
+0:40 : I reset the game, switch to tilt controls, and slow the puck slightly.
 
 ## Parts & Technologies used
 * DE10-Lite Development Board (MAX-10 FPGA chip)
@@ -24,13 +28,12 @@ These are the main modules required to run the brick breaker game. I wrote all o
 | object.sv  | Draws a generic object; used for the paddle & puck objects.  |
 | accelerometer_read_y.sv  | Reads tilt measured by the accelerometer chip; also initializes the accelerometer settings.|
 | spi_controller_v3.sv  | Controller to communicate with the accelerometer chip via 3-wire SPI.|
-| signed_to_unsigned.sv | Converts the signed output of the accelerometer to an unsigned number. |
+| signed_to_unsigned.sv | Converts the signed reading of the accelerometer to an unsigned number. |
 | pll_50_to_1.v  | PLL IP core used to generate a 1 MHz clock from the on-board 50 MHz clock.  |
 | synchronizer.sv  | Synchronizer used for clock domain crossing from the accelerometer interface (1MHz) to the main game logic (50 MHz).  |
 | pong_top_level.sv  | Top-level module used to package everything into an instance of the brick-breaker game |
 | vga_top_wrapper.sv  | Wrapper module used to connect pins of the FPGA. |
 
 
-
 ## Misc Design Notes
-These files include a couple of testbenches I created to verify VGA signal generation & SPI communication. The design notes include timing diagrams & FSM diagrams I drew for the SPI & ADXL345 controllers, as well as testbench results. 
+These files include a couple of testbenches I created to verify VGA signal generation & SPI communication. The design notes feature timing diagrams & FSM diagrams I drew for the SPI & accelerometer controllers, as well as testbench waveforms. 
